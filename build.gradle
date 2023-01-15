@@ -4,3 +4,40 @@ plugins {
     id 'com.android.library' version '7.3.1' apply false
     id 'org.jetbrains.kotlin.android' version '1.7.20' apply false
 }
+
+ext {
+    // Sdk and tools
+    // App dependencies versions
+
+    androidXAnnotations = '1.5.0'
+    archLifecycleVersion = '2.2.0'
+
+    //co-routine
+    coroutinesVersion = '1.6.4'
+    corektxVersion = '1.7.0'
+    junitVersion = '4.13.2'
+
+
+    //ui
+
+    recyclerViewVersion = '1.2.1'
+    appCompatVersion = '1.4.1'
+    cardVersion = '1.0.0'
+    constraintlayoutVersion = '2.1.4'
+
+
+
+    //g-son
+    converterGson = '2.9.0'
+
+    //retrofit
+    retrofit = '2.9.0'
+
+    //loggingInterceptor
+    loggingInterceptor='5.0.0-alpha.2'
+
+    //glide
+    glideVersion = '4.11.0'
+    glideCompilerVersion = '4.11.0'
+    glideIntegrationVersion = '4.11.0'
+}

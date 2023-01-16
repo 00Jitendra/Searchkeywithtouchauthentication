@@ -7,5 +7,5 @@ import com.example.searchkeywithtouchauthentication.data.model.SearchKeyModel
 
 @BindingAdapter("app:items")
 fun setList(listView: RecyclerView, items: MutableList<SearchKeyModel.Hit>) {
-    (listView.adapter as SearchActivityAdapter)
+    (listView.adapter as SearchActivityAdapter).swapData(items)
 }

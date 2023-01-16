@@ -41,18 +41,11 @@ class HomeViewModel : ViewModel() {
                 )
                 if (response.isSuccessful) {
                     if (!response.body()!!.hits.isNullOrEmpty()) {
-                       // activity.handleVisibility(false)
-                      //  activity.handleDataNotFind(false)
+
                         mUpdatedSearchList.addAll(response.body()!!.hits)
                         _searchItems.value = mUpdatedSearchList
-                        //activity.handleKeyBoardVisibility()
-                    } else {
-                       // activity.handleVisibility(false)
-                       // activity.handleDataNotFind(true)
+
                     }
-                }else{
-                    //activity.handleVisibility(false)
-                   // activity.handleDataNotFind(true)
                 }
             }
         } else {

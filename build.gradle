@@ -38,7 +38,7 @@ ext {
     loggingInterceptor='5.0.0-alpha.2'
 
     //glide
-    glideVersion = '4.11.0'
+    glideVersion = '4.13.2'
     glideCompilerVersion = '4.11.0'
     glideIntegrationVersion = '4.11.0'
 }

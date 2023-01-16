@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.searchkeywithtouchauthentication.data.model.SearchKeyModel
 import com.example.searchkeywithtouchauthentication.databinding.ItemSearchBinding
+import com.example.searchkeywithtouchauthentication.utils.imageHelper.ImageHelper
 
 
 class SearchActivityAdapter(
@@ -44,6 +45,7 @@ class SearchActivityAdapter(
             binding.viewModel = viewModel
             binding.allItem = item
             binding.executePendingBindings()
+            ImageHelper.loadImage(binding.images,item.previewURL,context)
 
         }
 

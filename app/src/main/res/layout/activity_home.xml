@@ -100,8 +100,8 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:text="Go"
-                        app:fontFamily="@font/gotham_ultra"
-                        android:textSize="18sp"/>
+                        android:textSize="18sp"
+                        app:fontFamily="@font/gotham_ultra" />
 
                 </FrameLayout>
 
@@ -114,89 +114,87 @@
                 android:background="#ffffff">
 
 
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="6dp">
 
-                    <FrameLayout
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/picture_list_view"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_marginTop="6dp">
+                        app:items="@{homeViewModel.searchItems}"
+                        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                        app:spanCount="2" />
 
-                        <androidx.recyclerview.widget.RecyclerView
-                            android:id="@+id/picture_list_view"
+                    <FrameLayout
+                        android:id="@+id/listProgress"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/white"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:paddingTop="12dp"
+                        android:paddingBottom="12dp"
+                        android:visibility="gone">
+
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_marginBottom="56dp"
-                            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-                            app:items="@{homeViewModel.searchItems}"
-                            app:spanCount="2"/>
+                            android:gravity="center"
+                            android:orientation="vertical">
 
-                        <FrameLayout
-                            android:id="@+id/listProgress"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:background="@color/white"
-                            android:clickable="true"
-                            android:focusable="true"
-                            android:paddingTop="12dp"
-                            android:paddingBottom="12dp"
-                            android:visibility="gone">
+                            <ProgressBar
+                                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:alpha="1.0"
+                                android:indeterminate="true" />
 
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:gravity="center"
-                                android:orientation="vertical">
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:text="Getting photos list..."
+                                android:textColor="@color/colorGrey" />
 
-                                <ProgressBar
-                                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:alpha="1.0"
-                                    android:indeterminate="true" />
-
-                                <androidx.appcompat.widget.AppCompatTextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginTop="8dp"
-                                    android:text="Getting photos list..."
-                                    android:textColor="@color/colorGrey" />
-
-                            </LinearLayout>
-
-                        </FrameLayout>
-
-                        <FrameLayout
-                            android:id="@+id/noDataFound"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:background="@color/white"
-                            android:clickable="true"
-                            android:focusable="true"
-                            android:visibility="@{homeViewModel.noDataFoundVisibility}">
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:gravity="center"
-                                android:orientation="vertical">
-
-                                <androidx.appcompat.widget.AppCompatImageView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="200dp"
-                                    app:srcCompat="@drawable/no_data" />
-
-                                <androidx.appcompat.widget.AppCompatTextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginTop="8dp"
-                                    android:text="Picture not found."
-                                    android:textColor="@color/colorGrey"
-                                    android:textSize="18sp" />
-
-                            </LinearLayout>
-
-                        </FrameLayout>
+                        </LinearLayout>
 
                     </FrameLayout>
+
+                    <FrameLayout
+                        android:id="@+id/noDataFound"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/white"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:visibility="@{homeViewModel.noDataFoundVisibility}">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="200dp"
+                                app:srcCompat="@drawable/no_data" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:text="Picture not found."
+                                android:textColor="@color/colorGrey"
+                                android:textSize="18sp" />
+
+                        </LinearLayout>
+
+                    </FrameLayout>
+
+                </FrameLayout>
 
 
             </FrameLayout>

@@ -43,8 +43,8 @@ class HomeViewModel : ViewModel() {
                 )
                 if (response.isSuccessful) {
                     if (!response.body()!!.hits.isNullOrEmpty()) {
-
-                        mUpdatedSearchList.addAll(response.body()!!.hits)
+                        mUpdatedSearchList.clear()
+                        mUpdatedSearchList.addAll(response.body()!!.hits )
                         _searchItems.value = mUpdatedSearchList
                         activity.hideKeyboard()
                     }
